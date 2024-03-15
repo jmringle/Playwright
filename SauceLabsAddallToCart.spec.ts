@@ -44,4 +44,13 @@ test('Add items to cart and check total', async ({ page }) => {
   
   // // Assert that the page title is 'Checkout: Your Information'
   // await expect(page).toHaveTitle('Checkout: Your Information');
+  await page.locator('[data-test="firstName"]').click();
+  await page.locator('[data-test="firstName"]').fill('Justin');
+  await page.locator('[data-test="firstName"]').press('Tab');
+  await page.locator('[data-test="lastName"]').fill('Credible');
+  await page.locator('[data-test="lastName"]').press('Tab');
+  await page.locator('[data-test="postalCode"]').fill('43011');
+  await page.locator('[data-test="continue"]').click();
+  await page.locator('[data-test="finish"]').click();
+  await page.locator('[data-test="back-to-products"]').click();
 });
